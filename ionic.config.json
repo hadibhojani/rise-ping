@@ -1,0 +1,7 @@
+{
+  "name": "rise-notify",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
