@@ -1,6 +1,8 @@
 
 import { Component } from '@angular/core';
 import { AuthService } from '../../assets/service/auth.service';
+import { ModalController } from '@ionic/angular'; 
+import { MyModalComponent } from '../my-modal/my-modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +12,7 @@ import { AuthService } from '../../assets/service/auth.service';
 export class DashboardPage {
   data: any;
 
-  constructor(private apiService: AuthService) {}
+  constructor(private apiService: AuthService,private modalController: ModalController) {}
 
   async givePointsToUser() {
     try {
@@ -52,5 +54,20 @@ export class DashboardPage {
     } catch (error) {
       console.error('Error sending alert:', error);
     }
+  }
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: MyModalComponent
+    });
+
+    modal.onDidDismiss().then((data) => {
+      if (data.data) {
+        console.log('Form Data:', data.data);
+        // Use the form data here
+      }
+    });
+
+    return await modal.present();
   }
 }
