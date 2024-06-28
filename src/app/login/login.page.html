@@ -16,7 +16,7 @@
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
       <ion-item>
         <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" formControlName="email"></ion-input>
+        <ion-input type="email" placeholder="user@example.com" formControlName="email"></ion-input>
       </ion-item>
       <ion-note *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" color="danger">
         Please enter a valid email.
@@ -24,7 +24,7 @@
 
       <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" formControlName="password"></ion-input>
+        <ion-input type="password" placeholder="password123" formControlName="password"></ion-input>
       </ion-item>
       <ion-note *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" color="danger">
         Password must be at least 6 characters long.

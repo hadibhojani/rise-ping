@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="full" (click)="givePointsToUser()">Give Points to User</ion-button>
+  <ion-button expand="full" (click)="createNewEvent()">Create New Event</ion-button>
+  <ion-button expand="full" (click)="notifyEvent()">Send Event Notification</ion-button>
+  <ion-button expand="full" (click)="sendUserAlert()">Send Alert</ion-button>
+  <pre>{{ data | json }}</pre>
+</ion-content>

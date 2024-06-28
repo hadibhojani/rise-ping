@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       if (this.authService.login(email, password)) {
-        this.router.navigate(['/folder/Inbox']);
+        this.router.navigate(['/dashboard']);
       } else {
         alert('Invalid credentials');
       }
